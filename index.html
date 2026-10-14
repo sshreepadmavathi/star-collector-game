@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Collect golden stars in a tiny space adventure."
+    />
+    <title>Star Collector</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div class="title-group">
+          <span class="title-sparkle" aria-hidden="true">✦</span>
+          <div>
+            <p class="eyebrow">A tiny space adventure</p>
+            <h1>Star Collector</h1>
+          </div>
+        </div>
+        <div class="header-stats">
+          <div class="level-card" aria-live="polite">
+            <span class="score-label">LEVEL</span>
+            <span class="level-value" id="level-display">1</span>
+          </div>
+          <div class="lives-card">
+            <span class="score-label">LIVES</span>
+            <div class="lives" id="lives" aria-live="polite" aria-label="3 lives">
+              <span class="life-heart" aria-hidden="true">♥</span>
+              <span class="life-heart" aria-hidden="true">♥</span>
+              <span class="life-heart" aria-hidden="true">♥</span>
+            </div>
+          </div>
+          <div class="score-card" aria-live="polite" aria-atomic="true">
+            <span class="score-label">SCORE</span>
+            <span class="score-value" id="score">0</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="game-frame" aria-label="Star Collector game">
+        <div class="playfield" id="playfield" tabindex="-1">
+          <div class="ambient-star ambient-star-one" aria-hidden="true">✦</div>
+          <div class="ambient-star ambient-star-two" aria-hidden="true">·</div>
+          <div class="ambient-star ambient-star-three" aria-hidden="true">✧</div>
+          <div class="ambient-star ambient-star-four" aria-hidden="true">·</div>
+
+          <div class="player is-hidden" id="player" aria-label="Your spaceship">
+            <span aria-hidden="true">🚀</span>
+          </div>
+          <div class="collectible is-hidden" id="collectible" aria-label="Golden star">
+            <span aria-hidden="true">★</span>
+          </div>
+          <div class="asteroid is-hidden" id="asteroid-1" aria-label="Asteroid">
+            <span aria-hidden="true"></span>
+          </div>
+          <div class="asteroid asteroid-small is-hidden" id="asteroid-2" aria-label="Asteroid">
+            <span aria-hidden="true"></span>
+          </div>
+          <div class="asteroid asteroid-large is-hidden" id="asteroid-3" aria-label="Asteroid">
+            <span aria-hidden="true"></span>
+          </div>
+          <div class="asteroid asteroid-small is-hidden" id="asteroid-4" aria-label="Asteroid">
+            <span aria-hidden="true"></span>
+          </div>
+          <div class="asteroid asteroid-large is-hidden" id="asteroid-5" aria-label="Asteroid">
+            <span aria-hidden="true"></span>
+          </div>
+
+          <div class="level-message is-hidden" id="level-message" role="status" aria-live="polite"></div>
+
+          <div class="intro-panel" id="intro-panel">
+            <div class="intro-orbit" aria-hidden="true">
+              <span class="intro-ship">🚀</span>
+              <span class="intro-star">★</span>
+            </div>
+            <p class="eyebrow">Ready for liftoff?</p>
+            <h2>Collect the stars</h2>
+            <p class="instructions">
+              Use the <strong>arrow keys</strong> to fly, collect golden stars
+              for <strong>10 points</strong>, and dodge the red asteroids.
+              Collect five stars in each of <strong>3 levels</strong>. You
+              have <strong>3 lives</strong>.
+            </p>
+            <button class="start-button" id="start-button" type="button">
+              <span aria-hidden="true">▶</span>
+              Start Game
+            </button>
+          </div>
+
+          <div class="game-over-panel is-hidden" id="game-over-panel" aria-live="polite">
+            <div class="intro-orbit" aria-hidden="true">
+              <span class="intro-ship">🚀</span>
+              <span class="intro-star">★</span>
+            </div>
+            <p class="eyebrow" id="end-eyebrow">Flight complete</p>
+            <h2 id="end-title">Game Over</h2>
+            <p class="instructions">
+              <span id="end-message">Final score:</span>
+              <strong id="final-score">0</strong>
+            </p>
+            <button class="start-button" id="restart-button" type="button">
+              <span aria-hidden="true">↻</span>
+              Restart
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <footer class="game-footer">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="game-status">Your next star is waiting out there.</span>
+        <span class="progress-hint" id="level-progress">Stars: 0 / 5</span>
+        <span class="keyboard-hint" aria-hidden="true">
+          <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd>
+        </span>
+      </footer>
+    </main>
+  </body>
+</html>
